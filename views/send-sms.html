@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="bg-base-200">
+    <!-- ส่วน navbar -->
+    <body class="bg-black">
+        <!-- ส่วน navbar -->
+        <div class="navbar bg-gray-950 text-neutral-50">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl" href="/views/home.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-6 h-6 text-warning">
+                    <path fill-rule="evenodd" d="M4.784 3A2.25 2.25 0 0 0 2.68 4.449L1.147 8.475A2.25 2.25 0 0 0 1 9.276v1.474A2.25 2.25 0 0 0 3.25 13h9.5A2.25 2.25 0 0 0 15 10.75V9.276c0-.274-.05-.545-.147-.801l-1.534-4.026A2.25 2.25 0 0 0 11.216 3H4.784Zm-.701 1.983a.75.75 0 0 1 .7-.483h6.433a.75.75 0 0 1 .701.483L13.447 9h-2.412a1 1 0 0 0-.832.445l-.406.61a1 1 0 0 1-.832.445h-1.93a1 1 0 0 1-.832-.445l-.406-.61A1 1 0 0 0 4.965 9H2.553l1.53-4.017Z" clip-rule="evenodd" />
+                  </svg>
+                  SMSTHAI24.com</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 ">
+                    <li><a href="/views/topup.html">เติมเครดิต</a></li>
+                    <li>
+                        <a
+                            href="/views/dashboard.html">dashboard</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-outline btn-info btn-sm">เครดิต
+                            </button>
+                    </li>
+                    <li>
+                        <a href="/views/register.html">สมัครสมาชิก</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- layout head -->
+    <div class="flex h-full min-h-screen">
+        <!-- sidebar -->
+        <aside class="sm:w-1/5 lg:w-1/7 p-4 h-full">
+            <!-- menu -->
+            <ul class="menu bg-base-200 w-full rounded-lg sm:w-56 lg:w-64">
+                <li><a href="/views/dashboard.html">
+                        <i class="fa-solid fa-chart-simple text-2xl"></i>
+                        แดชบอร์ด</a></li>
+                <li>
+                    <details>
+                        <summary>
+                            <i class="fa-solid fa-comment-sms text-2xl"></i>
+                            SMS
+                        </summary>
+                        <ul>
+                            <li><a href="/views/send-sms.html">ส่ง SMS</a></li>
+                            <li><a href="/views/report-user.html">รายงาน</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="/views/topup.html"><i class="fa-regular fa-credit-card text-2xl"></i>เติมเครดิต</a></li>
+                <li><a href="/views/report-user.html"><i class="fa-solid fa-bell text-2xl"></i>รายการแจ้งเติมเครดิต</a></li>
+                <li><a href="/views/member-list.html"><i class="fa-solid fa-users text-2xl"></i>สมาชิก</a></li>
+                <li><a href="/views/report-admin.html"><i class="fa-solid fa-list text-2xl"></i>รายงานส่ง SMS</a></li>
+                <li><a href="https://lin.ee/YEJW88v"><i class="fa-solid fa-envelope text-2xl"></i>ติดต่อแอดมิน</a></li>
+                <li><a href="/views/index.html"><i class="fa-solid fa-right-from-bracket text-2xl"></i>ออกจากระบบ</a></li>
+            </ul>
+        </aside>
+
+        <!-- send-sms -->
+
+<div class="text-sm breadcrumbs">
+    <ul>
+        <li><a>หน้าแรก</a></li>
+        <li><a>SMS</a></li>
+        <li>ส่งข้อความ</li>
+    </ul>
+</div>
+
+<p class="text-2xl mt-5 mb-5 text-stone-800">ส่งข้อความ</p>
+
+<div class="grid grid-cols-2">
+    <!-- Column 1 -->
+    <div class="">
+        <div class="card w-full bg-base-100 shadow-md rounded-lg">
+            <div class="card-body">
+                <!-- -->
+                <div class="w-full md mb-4 md:mb-0 ">
+                    <label for="template" class="block text-gray-700 font-bold mb-2">Template ข้อความ</label>
+                    <select id="template" class="select select-bordered w-full focus:outline-none focus:shadow-outline">
+                        <option selected>เลือก</option>
+                    </select>
+                </div>
+                <!-- -->
+                <div class="divider"></div>
+                <!-- -->
+                <div class="w-full md mb-4 md:mb-0 ">
+                    <label for="sms" class="block text-gray-700 font-bold mb-2">ข้อความ</label>
+                    <textarea name="sms" id="sms" maxlength="70" placeholder="ข้อความ 70 ตัวอักษร" rows="6"
+                        class="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    <div class="grid grid-cols-2 mt-2">
+                        <div>
+                            <button type="button" class="btn btn-outline btn-accent btn-sm"
+                                onclick="my_modal_1.showModal()">บันทึก Template</button>
+                        </div>
+                        <div style="text-align: right; font-size:14px;">
+                            <span id="msg-add">0</span>/<span id="msg-total">70</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="w-full md mb-4 mt-5 md:mb-0 " style="display: none;">
+                    <label for="mobile_number" class="block text-gray-700 font-bold mb-2">เบอร์โทร</label>
+                    <textarea name="mobile_number" id="mobile_number" placeholder="" rows="6"
+                        class="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+                <!-- -->
+                <div class="w-full md mb-4 mt-5 md:mb-0 ">
+                    <label for="mobile_number" class="block text-gray-700 font-bold mb-2">เบอร์โทร</label>
+                    <span style="font-size: 12px; color:#C0C0C0;">พิมพ์เสร็จ 1 เบอร์กด Enter</span>
+                    <input name='tags-regular' placeholder='' value='[]' class="w-full min-h-3"
+                        style="min-height: 500px;" disabled>
+                </div>
+                <span style="font-size: 12px; color:#C0C0C0;"><a href="./ex.xlsx">ตัวอย่างไฟล์ ex.xlsx</a></span>
+                <button type="button" class="btn btn-outline btn-accent btn-sm w-52"
+                    onclick="onSelectFile()">อิมพอร์ตจากไฟล์</button>
+                <input type="file" id="upload_file" style="display:none;"
+                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                <!-- -->
+
+                <label for="campaign" class="block text-gray-700 font-bold mb-2">อิมพอร์ไฟล์ ใช้เวลาในการโหลดไฟล์ กรุณารอสักครู่นะค่ะ</label>
+
+                <div class="w-full md mb-4 mt-5 md:mb-0 ">
+                    <input name="credit" id="credit" disabled value="ผู้รับทั้งหมด 0 เบอร์"
+                        class="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+                <label for="campaign" class="block text-gray-700 font-bold mb-2">หากอิมพอร์ไฟล์ แล้วจำนวนเบอร์ ไม่ขึ้นกรุณาติดต่อแอดมิน</label>
+                <!-- -->
+            </div>
+        </div>
+        <!-- -->
+        <div class="card w-full bg-base-100 shadow-md rounded-lg mt-10">
+            <div class="card-body">
+                <div class="w-full md mb-4 mt-5 md:mb-0 ">
+                    <label for="campaign" class="block text-gray-700 font-bold mb-2">ชื่อแคมเปญ</label>
+                    <input name="campaign" id="campaign" value="<?php echo date('Y-m-d H:i:s'); ?>"
+                        class="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="p-4">
+        <div class=" w-full bg-base-100 ">
+            <div class="flex items-center justify-center h-screen">
+                <!-- -->
+                <div class="mockup-phone border-stone-200">
+                    <div class="camera bg-slate-100 border-stone-200"></div>
+                    <div class="display bg-slate-100">
+                        <div class="artboard artboard-demo phone-1" style="background-color: #FFF;">
+                            <div id="display-sms">...</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -->
+<div class=" flex items-center justify-center">
+    <button type="button" onclick="sendSMS()"
+        class="mt-10 mb-10 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+        ส่ง SMS
+    </button>
+</div>
+
+<!--- --->
+<dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+        <h3 class="font-bold text-lg">เพิ่ม Template</h3>
+        <div>
+            <div class="w-full md mb-4 mt-5 md:mb-0 ">
+                <label for="template_name" class="block text-gray-700 font-bold mb-2">ชื่อ Template</label>
+                <input name="template_name" id="template_name"
+                    class="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+        </div>
+        <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-primary" onclick="addTemplate()">บันทึก</button>
+                <button class="btn">ยกเลิก</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+<!-- -->
+<div id="error-alert" class="toast toast-end" style="display: none;">
+    <div class="alert alert-error">
+        <span>ไม่สามารถส่ง SMS ได้</span>
+    </div>
+</div>
+<!-- -->
+<div id="file_vale" style="display:none;"></div>
+<div id="file_data" style="display:none;"></div>
+<!-- -->
+<script>
+//////////
+var inputElm = document.querySelector('input[name=tags-regular]')
+
+const mockAjax = (timeout => (RES, duration) => {
+    clearTimeout(timeout); // abort last request
+    return new Promise((resolve, reject) => timeout = setTimeout(resolve, duration || 0, RES))
+})()
+
+var tagify = new Tagify(inputElm, {
+    whitelist: [],
+    duplicates: false,
+    // whitelist: ["a", "ac", "aab", "aaa", "b", "bb", "ccc"],
+    id: 'test1',
+    tagTextProp: 'name',
+    editTags: {
+        clicks: 200,
+    },
+    transformTag: (tagData, originalData) => {
+        tagData.title = tagData.value;
+    },
+    // maxTags: 1,
+    keepInvalidTags: true,
+    // enforceWhitelist: true,
+    dropdown: {
+        enabled: 0,
+        sortby: 'startsWith',
+        // caseSensitive: true,
+        // sortby(suggestions, query){
+        //     console.log(suggestions, query)
+        //     return suggestions;
+        // }
+    },
+    templates: {
+        /*dropdownItemNoMatch: function(data) {
+            return `<div class='${this.settings.classNames.dropdownItem}' value="noMatch" tabindex="0" role="option">No suggestion found for: <strong>${data.value}</strong></div>`
+        }*/
+    },
+})
+
+// tagify.on('edit:start', ({detail}) => tagify.setTagTextNode(detail.tag, detail.data.value))
+tagify.on('edit:updated', ({
+    detail: {
+        tagify
+    }
+}) => {
+    tagify.DOM.input.focus()
+});
+
+tagify.on('add', onAddTag);
+tagify.on('remove', onRemoveTag);
+tagify.on('edit:updated', saveCaretPos)
+
+inputElm && inputElm.addEventListener('change', () => console.log("CHANGED!"))
+
+setTimeout(() => {
+    /*
+    tagify.loadOriginalValues(["ac", {
+        value: "aab",
+        editable: false
+    }, "aaa", "b", "bb", "ccc"])
+    */
+    tagify.setDisabled(false)
+}, 500);
+
+function onAddTag(e) {
+    console.log("onAddTag: ", e.detail);
+    //console.log("original input value: ", input.value)
+    //tagify.off('add', onAddTag) // exmaple of removing a custom Tagify event
+    addPhoneNumber(e.detail.data.value);
+}
+
+function onRemoveTag(e) {
+    //console.log("Tag removed:", e.detail.data.value);
+    var n = e.detail.data.value.split(".");
+    if (n.length > 1) {
+        $(".f_" + reTxt(n[0])).each(function(index) {
+            console.log(index + ": " + $(this).text());
+            delPhoneNumber($(this).text());
+        });
+        $(".f_data_" + reTxt(n[0])).text("");
+    } else {
+        delPhoneNumber(e.detail.data.value);
+    }
+}
+
+function saveCaretPos(e) {
+    // a delay is needed because the caret does not change location yet when `keydown` event is fired
+    console.log("up");
+}
+//////////
+$(function() {
+    $("#sms").on("change keyup paste", function() {
+        setMsg();
+    });
+
+    $("#mobile_number").on("change keyup paste", function() {
+        setCerdit();
+    });
+
+    $('#template').on("change", function() {
+        getTemplateById($(this).val());
+    });
+
+    $("#upload_file").on("change", function() {
+        uploadFile();
+    });
+
+    getTemplates();
+});
+
+function setMsg() {
+    var currentVal = $("#sms").val();
+    $("#msg-add").text(currentVal.length);
+    $("#msg-total").text(70 - currentVal.length);
+    if (currentVal.length === 0) {
+        currentVal = "...";
+    }
+    $("#display-sms").text(currentVal);
+    console.log(currentVal);
+}
+
+function setCerdit() {
+    var mobileNumberVal = $("#mobile_number").val();
+    var mobileNumberCount = mobileNumberVal.split(",");
+    var n = 0;
+    if (mobileNumberCount.length > 0 && mobileNumberCount[0] != '') {
+        n = mobileNumberCount.length;
+    }
+    $("#credit").val("ผู้รับทั้งหมด " + n + " เบอร์")
+}
+
+function addTemplate() {
+    const formData = new FormData();
+    formData.append('template_name', $("#template_name").val());
+    formData.append('template_sms', $("#sms").val());
+    formData.append('action_type', 'add_template');
+    $.ajax({
+        method: 'post',
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        enctype: 'multipart/form-data',
+        url: './sms-action.php',
+        success: function(msg) {
+            getTemplates();
+        }
+    });
+}
+
+function getTemplates() {
+    const formData = new FormData();
+    formData.append('action_type', 'get_templates');
+    $.ajax({
+        method: 'post',
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        enctype: 'multipart/form-data',
+        url: './sms-action.php',
+        success: function(resp) {
+            setTemplatesOption(resp.data);
+        }
+    });
+}
+
+function setTemplatesOption(items) {
+    $('#template').find('option').remove();
+    $('#template').append($('<option>', {
+        value: "",
+        text: "เลือก"
+    }));
+    $.each(items, function(i, item) {
+        $('#template').append($('<option>', {
+            value: item.template_id,
+            text: item.template_name
+        }));
+    });
+
+}
+
+function getTemplateById(id) {
+    const formData = new FormData();
+    formData.append('action_type', 'get_template_id');
+    formData.append('template_id', id);
+    $.ajax({
+        method: 'post',
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        enctype: 'multipart/form-data',
+        url: './sms-action.php',
+        success: function(resp) {
+            //alert(JSON.stringify(resp.data));
+            $("#sms").val(resp.data.template_msg);
+            setMsg();
+        }
+    });
+}
+
+function sendSMS() {
+    const formData = new FormData();
+    formData.append('action_type', 'send_sms');
+    formData.append('campaign_name', $("#campaign").val());
+    formData.append('mobile_number', $("#mobile_number").val());
+    formData.append('sms', $("#sms").val());
+
+    $(".file_list").each(function(index) {
+        console.log(index + ": " + $(this).text());
+        var txt = $(this).text();
+        if (txt != '') {
+            var txt_arr = txt.split("-");
+            formData.append('file_arr[]', txt_arr[0]);
+        }
+    });
+
+    $.ajax({
+        method: 'post',
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        enctype: 'multipart/form-data',
+        url: './sms-action.php',
+        success: function(resp) {
+            //alert(JSON.stringify(resp.data));
+            if (resp.status == true) {
+                window.location = './dashboard.php';
+            } else {
+                $("#error-alert").animate({
+                    width: 'toggle'
+                }, 4000);
+                $("#error-alert").hide(3000);
+            }
+        }
+    });
+
+}
+
+function addPhoneNumber(phone) {
+    var p_ex = phone.split(".");
+    if (p_ex.length === 1) {
+        var oldPhone = $("#mobile_number").val();
+        var nPhone = phone;
+        if (oldPhone != '') {
+            nPhone = oldPhone + "," + phone;
+        }
+        $("#mobile_number").val(nPhone);
+        setCerdit();
+    }
+}
+
+function delPhoneNumber(phone) {
+    var p_ex = phone.split(".");
+    if (p_ex.length === 1) {
+        var oldPhone = $("#mobile_number").val();
+        var phone_arr = oldPhone.split(",");
+        var nPhoneNumber = '';
+        for (var i = 0; i < phone_arr.length; i++) {
+            if (phone_arr[i] != phone) {
+                if (nPhoneNumber != '') {
+                    nPhoneNumber += ",";
+                }
+                nPhoneNumber += phone_arr[i];
+            }
+        }
+        $("#mobile_number").val(nPhoneNumber);
+        setCerdit();
+    }
+}
+
+function onSelectFile() {
+    $("#upload_file").trigger("click");
+}
+
+function uploadFile() {
+    var fd = new FormData();
+    var files = $('#upload_file')[0].files;
+    if (files.length > 0) {
+        //
+        fd.append('file', files[0]); //ใช้ในการแทรกค่าไฟล์รูปภาพใน element 
+        $.ajax({
+            url: 'upload.php', //ให้ระบุชื่อไฟล์ PHP ที่เราจะส่งค่าไป
+            type: 'post',
+            data: fd, //ข้อมูลจาก input ที่ส่งเข้าไปที่ PHP
+            contentType: false,
+            processData: false,
+            success: function(resp) { //หากทำงานสำเร็จ จะรับค่ามาจาก JSON หลังจากนั้นก็ให้ทำงานตามที่เรากำหนดได้
+                //alert(resp.file);
+                tagify.addTags([resp.file])
+                if (resp.data) {
+                    var class_n = resp.file.split(".");
+                    var file_id = resp.new_file_id + "-" + resp.file;
+                    $("#file_data").append("<span class='file_list f_data_" + reTxt(class_n[0]) + "'>" +
+                        file_id +
+                        "</span>");
+                    for (var i = 0; i < resp.data.length; i++) {
+                        addPhoneNumber(resp.data[i]);
+                        $("#file_vale").append("<span class='f_" + reTxt(class_n[0]) + "'>" + resp.data[i] +
+                            "</span>");
+                    }
+                }
+
+                $('#upload_file').val('');
+            }
+        });
+        //
+    }
+}
+
+function reTxt(str) {
+    str = str.replace(/ /g, '');
+    str = str.replace(/[\(\)]/g, "");
+    return str;
+}
+</script>
+</body>
+</html>

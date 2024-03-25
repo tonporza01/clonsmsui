@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+    <link rel="stylesheet" href="/css/app.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-base-200">
+    <!-- ส่วน navbar -->
+        <div class="navbar bg-gray-950 text-neutral-50">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl" href="/views/home.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-6 h-6 text-warning">
+                    <path fill-rule="evenodd" d="M4.784 3A2.25 2.25 0 0 0 2.68 4.449L1.147 8.475A2.25 2.25 0 0 0 1 9.276v1.474A2.25 2.25 0 0 0 3.25 13h9.5A2.25 2.25 0 0 0 15 10.75V9.276c0-.274-.05-.545-.147-.801l-1.534-4.026A2.25 2.25 0 0 0 11.216 3H4.784Zm-.701 1.983a.75.75 0 0 1 .7-.483h6.433a.75.75 0 0 1 .701.483L13.447 9h-2.412a1 1 0 0 0-.832.445l-.406.61a1 1 0 0 1-.832.445h-1.93a1 1 0 0 1-.832-.445l-.406-.61A1 1 0 0 0 4.965 9H2.553l1.53-4.017Z" clip-rule="evenodd" />
+                  </svg>
+                  SMSTHAI24.com</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 ">
+                    <li><a href="/views/topup.html">เติมเครดิต</a></li>
+                    <li>
+                        <a
+                            href="/views/dashboard.html">dashboard</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-outline btn-info btn-sm">เครดิต
+                            </button>
+                    </li>
+                    <li>
+                        <a href="/views/register.html">สมัครสมาชิก</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="container 2xl mx-auto min-h-screen">
+            <!-- ส่วน carousel -->
+            <div class="carousel w-full h-32 bg-base-200">
+                <div id="slide1" class="carousel-item relative w-full h-32">
+                    <img src="/img/ladder-playground-svgrepo-com.svg" class="w-full" />
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
+                        <a href="#slide2" class="btn btn-circle bg-yellow-500 text-neutral-50">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" class="carousel-item relative w-full h-32">
+                    <img src="/img/bench-svgrepo-com.svg" class="w-full" />
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
+                        <a href="#slide3" class="btn btn-circle bg-yellow-500 text-neutral-50">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" class="carousel-item relative w-full h-32">
+                    <img src="/img/ticket-svgrepo-com.svg" class="w-full" />
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
+                        <a href="#slide1" class="btn btn-circle bg-yellow-500 text-neutral-50">❯</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="hero bg-base-200">
+              <!-- hero content -->
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Hello there</h1>
+                        <p class="py-6">SMSTHAI24.com</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus repellat doloribus neque rem fuga mollitia exercitationem culpa id perspiciatis sapiente corrupti, officia amet cum corporis expedita nihil alias ullam. Voluptatibus?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex justify-center items-center gap-x-6">
+              <button class="btn btn-warning px-12 xl:px-16 mb-4">เติมเครดิต</button>
+              <button class="btn px-12 xl:px-16 mb-4 hover:bg-gray-700">ส่งข้อความ<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+              </svg>              
+              </button>
+            </div>
+
+            <!-- product list -->
+            
+            <!--
+      This example requires some changes to your config:
+      
+      ```
+      // tailwind.config.js
+      module.exports = {
+        // ...
+        plugins: [
+          // ...
+          require('@tailwindcss/aspect-ratio'),
+        ],
+      }
+      ```
+    -->
+    <div class="bg-base-200">
+        <div class="mx-auto  max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h2 class="sr-only">Products</h2>
+      
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <a href="#" class="group">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-neutral-50">Earthen Bottle</h3>
+              <p class="mt-1 text-lg font-medium text-gray-400">$48</p>
+            </a>
+            <a href="#" class="group">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-neutral-50">Nomad Tumbler</h3>
+              <p class="mt-1 text-lg font-medium text-gray-400">$35</p>
+            </a>
+            <a href="#" class="group">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-neutral-50">Focus Paper Refill</h3>
+              <p class="mt-1 text-lg font-medium text-gray-400">$89</p>
+            </a>
+            <a href="#" class="group">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-neutral-50">Machined Mechanical Pencil</h3>
+              <p class="mt-1 text-lg font-medium text-gray-400">$35</p>
+            </a>
+      
+            <!-- More products... -->
+          </div>
+        </div>
+      </div>
+        </div>
+
+  
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
