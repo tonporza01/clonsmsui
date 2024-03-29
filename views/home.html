@@ -27,12 +27,12 @@
             </div>
             <div class="flex-none">
                 <ul class="menu menu-horizontal px-1 ">
-                    <li><a href="/views/topup.html">เติมเครดิต</a></li>
-                    <li>
+                    <li class="hidden"><a href="/views/topup.html">เติมเครดิต</a></li>
+                    <li class="hidden">
                         <a
                             href="/views/dashboard.html">dashboard</a>
                     </li>
-                    <li>
+                    <li class="hidden">
                         <button class="btn btn-outline btn-info btn-sm">เครดิต
                             </button>
                     </li>
@@ -44,22 +44,22 @@
         </div>
 
         <!-- ส่วน carousel -->
-        <div class="carousel w-full h-80 bg-base-200">
-            <div id="slide1" class="carousel-item relative w-full h-80">
+        <div class="carousel w-full bg-base-200">
+            <div id="slide1" class="carousel-item relative w-full h-40 md:h-60 xl:h-80">
                 <img src="/img/รูปสไลด์01.png" class="w-full object-cover" />
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide3" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
                     <a href="#slide2" class="btn btn-circle bg-yellow-500 text-neutral-50">❯</a>
                 </div>
             </div>
-            <div id="slide2" class="carousel-item relative w-full h-80">
+            <div id="slide2" class="carousel-item relative w-full h-40 md:h-60 xl:h-80">
                 <img src="/img/รูปสไลด์02.png" class="w-full object-cover" />
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
                     <a href="#slide3" class="btn btn-circle bg-yellow-500 text-neutral-50">❯</a>
                 </div>
             </div>
-            <div id="slide3" class="carousel-item relative w-full h-80">
+            <div id="slide3" class="carousel-item relative w-full h-40 md:h-60 xl:h-80">
                 <img src="/img/รูปสไลด์03.png" class="w-full object-cover" />
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" class="btn btn-circle bg-yellow-500 text-neutral-50">❮</a>
@@ -68,24 +68,24 @@
             </div>
         </div>
 
-        <div class="h-20"></div>
+        <div class="h-4 xl:h-20"></div>
 
         <!-- main -->
         <div class="container 2xl mx-auto min-h-screen">
         
             <div class="hero bg-base-200">
               <!-- hero content -->
-                <div class="hero-content text-center">
-                    <div class="sm:max-w-3xl max-w-md ">
-                        <h1 class="text-6xl font-bold">ผู้นำด้านการส่ง SMS ในประเทศไทย</h1>
-                        <p class="py-6">SMSTHAI24.com</p>
+                <div class="hero-content text-center p-6">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">ผู้นำด้านการส่ง SMS ในประเทศไทย</h1>
+                        <p class="py-4">SMSTHAI24.com</p>
                         <p> ราคาเริ่มต้น 0.18 บาท สามารถติดต่อ เพื่อขอราคาพิเศษ หากใช้ปริมาณมาก โปรดติดต่อ SMSTHAI24 ยินดีบริการท่าน</p>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 flex justify-center items-center gap-x-6">
-              <button class="btn btn-warning px-12 xl:px-16 mb-4">เติมเครดิต</button>
-              <button class="btn px-12 xl:px-16 mb-4 hover:bg-gray-700">ส่งข้อความ<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6">
+            <div class="mt-4 flex justify-center items-center gap-x-4">
+              <button class="btn btn-warning px-8 xl:px-16 mb-4">เติมเครดิต</button>
+              <button class="btn px-8 xl:px-16 mb-4 hover:bg-gray-700">ส่ง SMS<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
               </svg>              
               </button>
@@ -110,30 +110,29 @@
       ```
     -->
     <div class="bg-base-200">
-        <div class="mx-auto  max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="mx-auto  max-w-2xl px-4 py-12 lg:max-w-7xl lg:px-8">
           <h2 class="sr-only">Products</h2>
 
            <!-- ส่วน content description -->
       <div class="container-2xl px-10 grid sm:grid-cols-2 items-center">
         <h2 class="text-[35px] leading-[45px] sm:text-[55px] sm:leading-tight sm:mb-0 mb-4">ใช้ได้หลายช่องทาง <br> ร่วมกับ <span class="text-warning">SMS</span><br>เพิ่มโอกาสปิดการขาย</h2>
         <div class="text-gray-100 texl-lg lg:text-2xl sm:justify-seft-end">เปลี่ยนจากลีดเป็นลูกค้าได้ไม่ยาก<br>ส่งข้อความ SMS ไปกับลูกค้าทุกท่าน
-        <div class="pt-8"></div>
       </div>
       </div>
       </div>
       
-          <div class="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+          <div class="p-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
             <!-- ส่วน 1 -->
             <a href="#" class="group">
-              <div class="w-full md:aspect-[3/4] px-6 py-10 lg:p-10 bg-blue-400 rounded-[20px] overflow-hidden relative bg-cover bg-no-repeat bg-tbs-dark-blue delay-100 duration-[1000ms] ">
-                <div class="flex flex-col gap-5">
-                  <h3 class="text-white text-2xl ">ส่ง SMS ในประเทศไทย</h3>
+              <div class="w-full px-6 py-10 bg-blue-400 rounded-[20px] md:aspect-[3/4] 2xl:aspect-[4/5] lg:p-10 overflow-hidden relative delay-100 duration-[1000ms]">
+                <div class="flex flex-col gap-5 xl:gap-10">
+                  <h3 class="text-white text-2xl xl:text-xl">ส่ง SMS ในประเทศไทย</h3>
                   <div class="inline-block">
-                    <h3 class="undefined text-[35px] leading-[45px] font-noto-san-semibold">
+                    <h3 class="undefined text-[35px] sm:text-5xl xl:text-5xl leading-[45px] font-noto-san-semibold">
                       <span class="text-white">เจ้าแรกในไทย ที่มี SMS Automation เพื่อการส่งข้อความอย่างต่อเนื่อง ช่วยประหยัดเวลา</span>
                     </h3>
                   </div>
-                  <div class="text-tbs-light-gray-2 text-md xl:max-w-[80%] z-10 relative">
+                  <div class="text-tbs-light-gray-2 text-md sm:text-2xl xl:text-2xl xl:max-w-[80%] z-10 relative">
                     <span class="text-gray-100">ลดภาระงาน เพิ่ม Engagement ด้วยการตั้งเงื่อนไขการส่ง ทำทุกอย่างอัตโนมัติง่ายๆ แค่ลากแล้ววาง</span>
                   </div>
                   <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
